@@ -32,14 +32,6 @@ controller.list = async(req,res) => {
 	}
 }
 
-controller.lastIddata = async(req,res) => {
-	const data = await Invoice.findAll({limit: 1, order: [ [ 'createdAt', 'DESC' ]]});
-	if (data === null) {
-	  console.log('Not found!');
-	} else {
-	  res.json({success:true,data:data});
-	}
-}
 controller.create = async(req,res) => {
 	// data
 	const{invoice_name, company_name, address, phone, total, itemdetails} = req.body;
@@ -48,7 +40,7 @@ controller.create = async(req,res) => {
   var itemdsync = [];
 	const data = await Invoice.create({
 		invoice_name:invoice_name,
-		company_name:address,
+		company_name:company_name,
 		address:address,
 		phone:phone,
 		total:total
@@ -67,7 +59,7 @@ controller.create = async(req,res) => {
   }else{
     res.status(200).json({
       success:true,
-      message:"Saving is Success",
+      //message:"Saving is Success",
       data:data
     })
   }

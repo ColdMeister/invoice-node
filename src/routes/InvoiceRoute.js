@@ -10,7 +10,6 @@ router.get('/get/:id',InvoiceController.get);
 // router.post('/delete',InvoiceController.delete);
 
 router.get('/datatest',InvoiceController.testdata);
-router.get('/lastid',InvoiceController.lastIddata);
 //router.get('/test',InvoiceController.test);
 // router.get('/save', (req,res)=>{
 // 	res.json({status:"Employeed saved"});
