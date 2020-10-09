@@ -15,7 +15,7 @@ controller.get = async (req,res) => {
 			include:'InvoiceDetails',
       where: { id: id }
   });
-
+  
 	if (data === null) {
 	  console.log('Not found!');
 	} else {
