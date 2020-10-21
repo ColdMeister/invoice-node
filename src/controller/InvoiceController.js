@@ -119,7 +119,7 @@ controller.delete = async (req, res) => {
       where: { id: id}
     })
   })
-  if (del === null) {
+   if (del === null) {
     	  console.log('Not found!');
   }else{
       res.json({
